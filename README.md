@@ -50,10 +50,12 @@ do {
  print("Response: \(response ?? "No data")")
 } catch {
  print("Error: \(error.localizedDescription)")
-}```
-2. URLBuilder
+}
+```
+### 2. **URLBuilder**
 URLBuilder is used to construct URLRequest or simple URLs with query parameters.
 
+```swift
 import NetworkManager
 
 let builder = URLBuilder()
@@ -86,9 +88,12 @@ let multiPartRequest = builder.buildMultiPartURL(
     headers: ["Authorization": "Bearer token"],
     dataArray: [MultiPartModel(key: "file", type: .file, data: fileData)]
 )
-Example: Sending a Request
+```
+
+**Example: Sending a Request**
 Here’s an example of how to use both ApiClient and URLBuilder to send a network request.
 
+```swift
 import NetworkManager
 
 let builder = URLBuilder()
@@ -111,7 +116,8 @@ do {
 } catch {
     print("Error: \(error.localizedDescription)")
 }
-Classes
+```
+**Classes**
 
 ApiClient
 ApiClient is responsible for performing HTTP requests. It handles both successful and failed requests, and it can return decoded objects or raw strings.
