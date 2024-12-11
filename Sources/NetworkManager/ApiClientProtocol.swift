@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ApiClientProtocol {
+public protocol ApiClientProtocol {
     var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy { get }
     func excecute<T: Decodable>(dataType: T.Type, urlRequest: URLRequest) async throws -> T
 }
