@@ -3,7 +3,10 @@
 import Foundation
 
 public class NetworkManager: ApiClientProtocol {
-    func excecute<T>(dataType: T.Type, urlRequest: URLRequest) async throws -> T where T : Decodable {
+
+    public init() {}
+    
+    public func excecute<T>(dataType: T.Type, urlRequest: URLRequest) async throws -> T where T : Decodable {
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -32,7 +35,7 @@ public class NetworkManager: ApiClientProtocol {
         }
     }
     
-    func excecute(urlRequest: URLRequest) async throws -> String? {
+    public func excecute(urlRequest: URLRequest) async throws -> String? {
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
         guard let httpResponse = response as? HTTPURLResponse else {
