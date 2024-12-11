@@ -8,6 +8,9 @@
 import Foundation
 
 public class URLBuilder: URLBuilderProtocol {
+    
+    public init() {}
+    
     public func buildURL(baseURL: String, path: String, queryItems: [URLQueryItem]?, httpMethod: String, headers: [String: String], bodyParams: Any?) -> URLRequest? {
         
         guard var components = URLComponents(string: baseURL + path) else {
