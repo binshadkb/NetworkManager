@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ApiError: Error {
+public enum ApiError: Error {
     case invalidResponse
     case parseError
     case unauthozized
