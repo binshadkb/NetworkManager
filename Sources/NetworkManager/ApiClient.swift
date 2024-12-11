@@ -7,8 +7,10 @@
 
 import Foundation
 
-class ApiClient: ApiClientProtocol {
-    func excecute<T>(dataType: T.Type, urlRequest: URLRequest) async throws -> T where T : Decodable {
+public class ApiClient: ApiClientProtocol {
+    public init() {}
+    
+    public func excecute<T>(dataType: T.Type, urlRequest: URLRequest) async throws -> T where T : Decodable {
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -37,7 +39,7 @@ class ApiClient: ApiClientProtocol {
         }
     }
     
-    func excecute(urlRequest: URLRequest) async throws -> String? {
+    public func excecute(urlRequest: URLRequest) async throws -> String? {
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
         guard let httpResponse = response as? HTTPURLResponse else {
