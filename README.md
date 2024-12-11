@@ -124,16 +124,16 @@ ApiClient is responsible for performing HTTP requests. It handles both successfu
 
 Methods:
 
-excecute<T>(dataType: T.Type, urlRequest: URLRequest): Performs a network request and decodes the response into a specified Decodable type.
-excecute(urlRequest: URLRequest): Performs a network request and returns the response as a string.
+```swift excecute<T>(dataType: T.Type, urlRequest: URLRequest) ```: Performs a network request and decodes the response into a specified Decodable type.
+```swift excecute(urlRequest: URLRequest)```: Performs a network request and returns the response as a string.
 URLBuilder
 URLBuilder provides methods for constructing URLRequest objects with various parameters.
 
 Methods:
 
-buildURL(baseURL: String, path: String, queryItems: [URLQueryItem]?, httpMethod: String, headers: [String: String], bodyParams: Any?): Builds a complete URLRequest with headers, body, and query parameters.
-buildURL(baseURL: String, path: String, queryItems: [URLQueryItem]?): Builds a simple URL using base URL, path, and query items.
-buildMultiPartURL(baseURL: String, path: String, queryItems: [URLQueryItem]?, httpMethod: String, headers: [String: String], dataArray: [MultiPartModel]): Builds a multipart/form-data request for file uploads.
+```swift buildURL(baseURL: String, path: String, queryItems: [URLQueryItem]?, httpMethod: String, headers: [String: String], bodyParams: Any?)```: Builds a complete URLRequest with headers, body, and query parameters.
+```swiftbuildURL(baseURL: String, path: String, queryItems: [URLQueryItem]?)```: Builds a simple URL using base URL, path, and query items.
+```swiftbuildMultiPartURL(baseURL: String, path: String, queryItems: [URLQueryItem]?, httpMethod: String, headers: [String: String], dataArray: [MultiPartModel])```: Builds a multipart/form-data request for file uploads.
 Error Handling
 
 The package uses the following error types:
