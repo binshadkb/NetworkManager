@@ -42,7 +42,7 @@ public class URLBuilder: URLBuilderProtocol {
         return urlRequest
     }
     
-    func buildURL(baseURL: String, path: String, queryItems: [URLQueryItem]?) -> URL? {
+    public func buildURL(baseURL: String, path: String, queryItems: [URLQueryItem]?) -> URL? {
         var components = URLComponents(string: baseURL + path)
        
         components?.queryItems = queryItems
