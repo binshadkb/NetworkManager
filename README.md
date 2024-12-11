@@ -50,7 +50,7 @@ do {
  print("Response: \(response ?? "No data")")
 } catch {
  print("Error: \(error.localizedDescription)")
-}
+}```
 2. URLBuilder
 URLBuilder is used to construct URLRequest or simple URLs with query parameters.
 
