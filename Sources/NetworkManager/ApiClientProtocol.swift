@@ -12,7 +12,7 @@ public protocol ApiClientProtocol {
     func excecute<T: Decodable>(dataType: T.Type, urlRequest: URLRequest) async throws -> T
 }
 
-extension ApiClientProtocol {
+public extension ApiClientProtocol {
     var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy {
         .custom { decoder -> Date in
             let container = try decoder.singleValueContainer()
