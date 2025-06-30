@@ -32,12 +32,12 @@ public class URLBuilder: URLBuilderProtocol {
         
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        if let bodyParams = bodyParams as? Encodable {
+        if let params = bodyParams {
             do {
-                let jsonData = try JSONEncoder().encode(bodyParams)
+                let jsonData = try JSONSerialization.data(withJSONObject: params, options: [])
                 urlRequest.httpBody = jsonData
-            }
-            catch {
+            } catch {
+                print("Failed to serialize JSON:", error)
                 return nil
             }
         }
